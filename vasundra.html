@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JavaScript Content</title>
+</head>
+<body>
+  <form style="border:2px solid red">
+    <legend style="border:2px solid green; padding:2px">hello world</legend>
+    <label>number</label><input type="text" id="in">
+    <button type="button" onclick="ok()">click me</button>
+  </form>
+  <div id="output">hi</div>
+
+  <script>
+  
+    function test(n){
+      if(n > 0) {
+        return n + test(n - 1);
+      } else {
+        return 0;
+      }
+    }
+  
+    function ok(){
+     let y=parseInt(document.getElementById("in").value,10);
+      document.getElementById("output").innerHTML = test(y);
+      document.getElementById("in").value="";
+    }
+  </script>
+</body>
+</html>
